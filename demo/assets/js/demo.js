@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
   var buildWrap = document.querySelector('.build-wrap'),
     renderWrap = document.querySelector('.render-wrap'),
     editBtn = document.getElementById('edit-form'),
+    copyDataBtn = document.getElementById('copy-html'),
     formData = window.sessionStorage.getItem('formData'),
     editing = true,
     fbOptions = {
@@ -28,6 +29,13 @@ jQuery(document).ready(function($) {
 
     window.sessionStorage.setItem('formData', JSON.stringify(formBuilder.formData));
   });
+
+    new window.Clipboard(copyDataBtn, {
+      text: function() {
+        // toast({msg: 'Form HTML successfully copied to clipboard.'});
+        return renderedForm.outerHTML;
+      }
+    });
 
   editBtn.onclick = function() {
     toggleEdit();

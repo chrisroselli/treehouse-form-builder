@@ -8,20 +8,20 @@
     var defaults = {
       controlPosition: 'right',
       controlOrder: [
-        'autocomplete',
-        'button',
+        'header',
+        'paragraph',
+        'text',
+        'textarea',
         'checkbox',
         'checkbox-group',
-        'date',
-        'file',
-        'header',
-        'hidden',
-        'paragraph',
-        'number',
         'radio-group',
         'select',
-        'text',
-        'textarea'
+        'number',
+        'date',
+        'button',
+        'hidden',
+        'file',
+        'autocomplete'
       ],
       dataType: 'xml',
       // Array of fields to disable
