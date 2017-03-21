@@ -25,7 +25,7 @@
       ],
       dataType: 'xml',
       // Array of fields to disable
-      disableFields: [],
+      disableFields: ['autocomplete'],
       editOnAdd: false,
       // Uneditable fields or other content you would like to appear before and after regular fields:
       append: false,
@@ -46,10 +46,6 @@
       // }],
       defaultFields: [],
       inputSets: [],
-      fieldRemoveWarn: false,
-      roles: {
-        1: 'Administrator'
-      },
       messages: {
         addOption: 'Add Option +',
         allFieldsRemoved: 'All fields were removed.',
@@ -126,7 +122,6 @@
         remove: '&#215;',
         required: 'Required',
         richText: 'Rich Text Editor',
-        roles: 'Access',
         save: 'Save',
         selectOptions: 'Options',
         select: 'Select',
@@ -542,7 +537,8 @@
         'date',
         'select',
         'textarea'])) {
-        field.className = 'form-control'; // backwards compatibility
+        field.className = '';
+        field.name = 'form_logger_' + field.label; // backwards compatibility
       } else {
         field.className = field.class || field.className; // backwards compatibility
       }
@@ -740,8 +736,6 @@
       availableRoles.push('</div>');
 
       let accessLabels = {first: opts.messages.roles, second: opts.messages.limitRole, content: availableRoles.join('')};
-
-      advFields.push(boolAttribute('access', values, accessLabels));
 
       if (values.type === 'checkbox-group' || values.type === 'radio-group') {
         advFields.push(boolAttribute('other', values, {first: opts.messages.enableOther, second: opts.messages.enableOtherMsg}));

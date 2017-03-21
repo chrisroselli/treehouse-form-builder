@@ -80,7 +80,8 @@
     "test": "gulp test"
   },
   "dependencies": {
-    "clipboard": "^1.6.1"
+    "clipboard": "^1.6.1",
+    "toastr": "^2.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
