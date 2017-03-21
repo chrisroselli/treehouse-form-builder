@@ -43,3 +43,4 @@ jQuery(function($) {
 
 ## Translators Needed!
 As formBuilder usage grows so does it's need to be available in multiple languages. This is currently possible by manually passing translations through the config options object but wouldn't it be great if it worked out of the box? See [Contributing Languages](https://github.com/kevinchappell/formBuilder/blob/languages/CONTRIBUTING.md) for details.
+# treehouse-form-builder
